@@ -1,0 +1,9 @@
+ipex-llm==2.1.0b20240805
+transformers==4.37.0
+accelerate==0.33.0
+streamlit==1.38.0
+einops==0.8.0
+torch==2.3.1
+sentencepiece==0.2.0
+py-cpuinfo==9.0.0
+modelscope 
