@@ -7,3 +7,4 @@ torch==2.3.1
 sentencepiece==0.2.0
 py-cpuinfo==9.0.0
 modelscope 
+openai
