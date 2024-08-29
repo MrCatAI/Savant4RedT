@@ -21,4 +21,4 @@ if not os.path.exists(expected_path) or not os.listdir(expected_path):
 
     shutil.move(downloaded_path, expected_path)
 
-os.system("streamlit run 😀_Beginning.py --server.address 0.0.0.0 --server.port 6006")
+os.system("streamlit run 😀_Beginning.py --server.address 0.0.0.0 --server.port 7860")
