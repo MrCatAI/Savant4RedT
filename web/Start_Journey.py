@@ -16,11 +16,11 @@ def create_the_taskbot():
         page_title="Homepage for Proj",  # 设置网页标题
         page_icon="🌻"
     )
-    with open("../resource/styles.css", encoding="UTF-8") as f:
+    with open("./resource/styles.css", encoding="UTF-8") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    with open("../resource/markdown_txt_begin_1.md", encoding="UTF-8") as f:
+    with open("./resource/markdown_txt_begin_1.md", encoding="UTF-8") as f:
         markdown_txt_begin_1 = f.read()
-    image = Image.open('../resource/pic_usage_1.png')
+    image = Image.open('./resource/pic_usage_1.png')
 
     # outlook - main
     st.title("🌠 Savant4RedT ⌈内容安全⌋ Expert")
@@ -40,7 +40,7 @@ def create_the_taskbot():
             unsafe_allow_html=True
         )
     # sidebar logo
-    image_logo = Image.open('../resource/pic_usage_3.png')
+    image_logo = Image.open('./resource/pic_usage_3.png')
     st.sidebar.image(
         image_logo,
         use_column_width=True
@@ -54,27 +54,27 @@ if __name__ == "__main__":
     #     tokenizer_path=MODEL_PATH
     # )
 
-   import os
+    import os
     import shutil
     from modelscope import snapshot_download
-
+    
     model_id = 'SaaRaaS/Savant4RedT-1_8B-Content'
     target_path = 'models'
     expected_model_subpath = 'Savant4RedT-1_8B-Content'
     expected_path = os.path.join(target_path, expected_model_subpath)
-
+    
     if not os.path.exists(expected_path) or not os.listdir(expected_path):
         downloaded_path = snapshot_download(model_id, cache_dir=target_path)
-
+    
         if not os.path.isdir(downloaded_path):
             raise ValueError(f"Expected {downloaded_path} to be a directory.")
-
+    
         if os.path.exists(expected_path):
             if os.path.isdir(expected_path):
                 shutil.rmtree(expected_path)
             else:
                 os.remove(expected_path)
-
+    
         shutil.move(downloaded_path, expected_path)
     # Create the chatbot interface
     create_the_taskbot()
